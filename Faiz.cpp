@@ -18,9 +18,11 @@ void store::EmployeeUI()          // also set ni ke void employeesystem()
     do
     {
         cout << "Please insert username:\n";
-        getline(cin,username);
+        cin>>username;
         cout << "Please insert password:\n";
         cin >> password;
+        cin.clear();
+        cin.ignore(10000,'\n');
 
         
         if(password != truepassword)
@@ -58,6 +60,8 @@ void store::EmployeeUI()          // also set ni ke void employeesystem()
         return;
         break;                       //chester nanti tukar ni ke return;
     default:
+        std::cin.clear();
+        std::cin.ignore(10000,'\n');
         cout << "Invalid choice";
         break;
     }

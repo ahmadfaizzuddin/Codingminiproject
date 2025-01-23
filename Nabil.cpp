@@ -3,9 +3,9 @@
 #include <string>
 #include "main.hpp"
 using namespace std;
-void store::itemlocator()
+void store::itemlocator() 
 {
-int confirm;
+   int confirm;
     do{
         map<string, int> supermarketItems;
 
@@ -44,7 +44,7 @@ int confirm;
         cout << "This is item locator system to asist customer to track your wanted item\n\n";
         cout << "So may i know you what are you searching for?: ";
         cin.ignore();
-        cin>>userInput;
+        getline(cin, userInput);
 
         
         for (auto &c : userInput) {
@@ -74,5 +74,8 @@ int confirm;
         cout << "[1] Yes" << endl;
         cout << "[2] No" << endl;
         cin >> confirm;
+        std::cin.clear();
+        std::cin.ignore(10000,'\n');
     }while(confirm == 1);
+    return;
 }

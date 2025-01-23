@@ -3,8 +3,11 @@
 #include "universal.hpp"
 using namespace std;
 
+
 void store::stockupdate()                                     //stock level function
 {
+    
+    int loopcondition;
     int Options,row,collum = 2, stock_update,continueupdate;
     int confirmation;
     do                                                           // a place holder

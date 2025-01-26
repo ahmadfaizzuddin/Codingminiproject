@@ -5,7 +5,8 @@
 using namespace std;
 void store::itemlocator() 
 {
-   int confirm;
+    int confirm;
+
     do{
         map<string, int> supermarketItems;
 
@@ -38,12 +39,11 @@ void store::itemlocator()
         supermarketItems["Bread board"] = 26;
         supermarketItems["Soldering equipment"] = 27;
 
-        
         string userInput;
         cout << "Welcome to the Faiz Electronic\n\n";
         cout << "This is item locator system to asist customer to track your wanted item\n\n";
         cout << "So may i know you what are you searching for?: ";
-        cin.ignore();
+        cin>>ws;
         getline(cin, userInput);
 
         

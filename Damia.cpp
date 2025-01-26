@@ -69,8 +69,8 @@ int store::Buying() {
     output.open("Receipt.txt");
     read.open("Receipt2.txt");
     do {
-        cout<<"Select category of Item:\n"
-            <<"1. Gadget\n"
+        cout<<"Select category of Item (4 to checkout):\n"
+            <<"1. Gadgets\n"
             <<"2. Accessories\n"
             <<"3. Components\n"
             <<"> ";
@@ -79,7 +79,7 @@ int store::Buying() {
         {
         case 1:
         displayItems(itemsG);
-        cout << "\nEnter the number of the item to add to your cart (0 to checkout): ";
+        cout << "\nEnter the number of the item to add to your cart: ";
         cin >> choice;
         if (choice > 0 && choice <= static_cast<int>(itemsG.size())) {
             
@@ -89,14 +89,16 @@ int store::Buying() {
             read << itemsG[choice - 1].price << " ";
             Gadget[choice-1][1] -= 1;
             
-        } else if (choice != 0) {
+        } else  {
             cout << "Invalid choice. Please try again." << endl;
-        }
+            cin.clear();
+            cin.ignore(1000,'\n');
+        } 
             break;
         
         case 2:
         displayItems(itemsA);
-        cout << "\nEnter the number of the item to add to your cart (0 to checkout): ";
+        cout << "\nEnter the number of the item to add to your cart: ";
         cin >> choice;
         if (choice > 0 && choice <= static_cast<int>(itemsA.size())) {
             
@@ -106,14 +108,16 @@ int store::Buying() {
             read << itemsA[choice - 1].price << " ";
             Accesories[choice-1][1] -= 1;
 
-        } else if (choice != 0) {
+        } else {
             cout << "Invalid choice. Please try again." << endl;
+            cin.clear();
+            cin.ignore(1000,'\n');
         }
             break;
 
         case 3:
         displayItems(itemsC);
-        cout << "\nEnter the number of the item to add to your cart (0 to checkout): ";
+        cout << "\nEnter the number of the item to add to your cart: ";
         cin >> choice;
         if (choice > 0 && choice <= static_cast<int>(itemsC.size())) {
             
@@ -123,22 +127,35 @@ int store::Buying() {
             read << itemsC[choice - 1].price << " ";
             Component[choice-1][1] -= 1;
             
-        } else if (choice != 0) {
+        } else {
             cout << "Invalid choice. Please try again." << endl;
+            cin.clear();
+            cin.ignore(1000,'\n');
         }
             break;
-       
+
+        case 4:    
+            cin.clear();
+            cin.ignore(10000,'\n');
+            break;
+
+        default:
+        cin.clear();
+        cin.ignore(10000,'\n');
+        cout<<"Invalid choice.\n";
+        cat = 1;
+        break;
         }
         
         
         
-    } while (cat != 0);
+    } while (cat != 4);
     output.close();
     read.close();
 
     // Display the total bill
     if (!cart.empty()) {
-        receipt();
+        return 0;
     } else {
         cout << "\nYour cart is empty." << endl;
     }

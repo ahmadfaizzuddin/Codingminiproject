@@ -5,11 +5,9 @@ using namespace std;
 
 int main()
 {   
-    buildDataG();
-    buildDataA();
-    buildDataC();
+    buildData();
 
-    while(true)
+    for(;;)
     {
     cout<<" ________________________________\n"
         <<"|                                |\n"
@@ -37,12 +35,12 @@ int main()
         break;
     default:
         cin.clear();
-        cin.ignore(10000,'\n');
+        cin.ignore(1000,'\n');
+        saveData();
+        return 0;   
         break;
     }
-    saveDataG();
-    saveDataA();
-    saveDataC();
+    
     }
-    return 0;
+    
 }

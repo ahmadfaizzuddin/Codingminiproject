@@ -38,9 +38,10 @@ void store::checkstocks()
     cin>>loopingcondition;
     }
     while (loopingcondition==1);
-    {
+        
         return;
-    }
+    
+    
     
 }
 
@@ -86,6 +87,11 @@ void store::displayStock(int selection, double Gadget[6][2], double Accesories[9
             }
             break;
         }
+        default:
+        std::cin.clear();
+        std::cin.ignore(10000,'\n');
+        std::cout<<"Invalid choice.\n";
+        break;
     }
 }
 

@@ -1,3 +1,5 @@
+// CHESTER LEE JET HUI
+// MATRIC NUMBER : 23301080
 #include "universal.hpp"
 #include "main.hpp"
 #include <iostream>
@@ -6,26 +8,19 @@ double Component[12][2];
 double Gadget[6][2];
 double Accesories[9][2];
 
-void buildDataG()
+void buildData()//opens file to get the data to be used
 {
     std::string name;
     double price;
     double stock;
     
-    std::ifstream dataG("Gadgets.txt"); 
+    std::ifstream dataG("Gadgets.txt");
     for (int i = 0; i < 6; i++)
         {        
             dataG>>name>>Gadget[i][0]>>Gadget[i][1];       
         }
     dataG.close();
-
-}
-void buildDataA()
-{   
-    std::string name;
-    double price;
-    double stock;
-
+ 
     std::ifstream dataA("Accessories.txt"); 
     
     for (int i = 0; i < 9; i++)
@@ -33,12 +28,6 @@ void buildDataA()
             dataA>>name>>Accesories[i][0]>>Accesories[i][1];
         }
     dataA.close();
-}
-void buildDataC()
-{
-    std::string name;
-    double price;
-    double stock;
 
     std::ifstream dataC("Components.txt");    
     for (int i = 0; i < 12; i++)
@@ -48,74 +37,60 @@ void buildDataC()
     dataC.close();
 }
 
-void saveDataG()
+void saveData()//opens file to save the data that is used or changed
 {
     std::string name;
     std::string list[6];
     double price;
     double stock;
-    std::ifstream string("Gadgets.txt");
+    std::ifstream stringG("Gadgets.txt");
 
         for (size_t i = 0; i < 6; i++)
         {   
-            string>>list[i]>>price>>stock;      
+            stringG>>list[i]>>price>>stock;      
         }
 
-    string.close();
+    stringG.close();
 
-    std::ofstream output;
-    output.open("Gadgets.txt");
+    std::ofstream outputG;
+    outputG.open("Gadgets.txt");
     for (size_t i = 0; i < 6; i++)
     {
-        output << list[i] << " " << Gadget[i][0] << " " << Gadget[i][1] <<std::endl;
+        outputG << list[i] << " " << Gadget[i][0] << " " << Gadget[i][1] <<std::endl;
     }
-    output.close();
-}
+    outputG.close();
 
-void saveDataA()
-{
-    std::string name;
-    std::string list[9];
-    double price;
-    double stock;
-    std::ifstream string("Accessories.txt");
+    std::ifstream stringA("Accessories.txt");
 
         for (size_t i = 0; i < 9; i++)
         {   
-            string>>list[i]>>price>>stock;      
+            stringA>>list[i]>>price>>stock;      
         }
         
-    string.close();
+    stringA.close();
 
-    std::ofstream output;
-    output.open("Accessories.txt");
+    std::ofstream outputA;
+    outputA.open("Accessories.txt");
     for (size_t i = 0; i < 9; i++)
     {
-        output << list[i] << " " << Accesories[i][0] << " " << Accesories[i][1] <<std::endl;
+        outputA << list[i] << " " << Accesories[i][0] << " " << Accesories[i][1] <<std::endl;
     }
-    output.close();
-}
+    outputA.close();
 
-void saveDataC()
-{
-    std::string name;
-    std::string list[12];
-    double price;
-    double stock;
-    std::ifstream string("Components.txt");
+    std::ifstream stringC("Components.txt");
 
         for (size_t i = 0; i < 12; i++)
         {   
-            string>>list[i]>>price>>stock;      
+            stringC>>list[i]>>price>>stock;      
         }
         
-    string.close();
+    stringC.close();
 
-    std::ofstream output;
-    output.open("Components.txt");
+    std::ofstream outputC;
+    outputC.open("Components.txt");
     for (size_t i = 0; i < 12; i++)
     {
-        output << list[i] << " " << Component[i][0] << " " << Component[i][1] <<std::endl;
+        outputC << list[i] << " " << Component[i][0] << " " << Component[i][1] <<std::endl;
     }
-    output.close();
+    outputC.close();
 }

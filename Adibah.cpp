@@ -65,6 +65,7 @@ void store::startpricechanger()
     {
         return;
     }
+    cin.clear();
 }
 
 

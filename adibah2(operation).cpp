@@ -115,10 +115,13 @@ void store::operations(int categorieselect)
         else 
         {
             cout <<"Action canceled......";
+            cin.clear();
         }
         break;
     
     default:
+    cin.clear();
+    cin.ignore(10000,'\n');        
     cout << "Invalid option";
         break;
     }

@@ -26,12 +26,12 @@ void store::stockupdate()                                     //stock level func
    
     cout << "Please select the item:\n";
     cout << "1.Samsung A12\n";
-    cout << "2. Samsung Panasonic tv\n";
-    cout << "3. Ps5 \n";
-    cout << "4,Smart watch\n";
+    cout << "2.Samsung Panasonic tv\n";
+    cout << "3.Ps5 \n";
+    cout << "4.Smart watch\n";
     cout << "5.Laptop\n";
-    cout << "6.Iphone 17 Pro";
-    cout << "6.\n";
+    cout << "6.Iphone 17 Pro\n";
+    
 
     cin >> row;
 
@@ -158,9 +158,13 @@ void store::stockupdate()                                     //stock level func
         break;
 
     default:
+    std::cin.clear();   
+    std::cin.ignore(10000,'\n');
+
     cout << "Invalid choice\n";  
         break;
     }
+    
 
     cout << "Do you wish to continue to update?\n";
     cout << "1. Yes \n";
@@ -168,6 +172,7 @@ void store::stockupdate()                                     //stock level func
     cin >> continueupdate;
     }
     while (continueupdate == 1);
+    cin.clear();
     return;
 
 }

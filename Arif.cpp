@@ -12,6 +12,7 @@ using namespace std;
 
 void store::checkstocks()
 {   
+    cin.clear();
     int selection; 
     string gadget[6][2], accesories[9][2],  component[12][2];
 

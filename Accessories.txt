@@ -1,6 +1,6 @@
 Phone_Case 10 31
 Charging_Cable_Type_C 12 12
-Earbud 50 9
+Earbud 50 8
 Power_Bank 300 21
 Keyboard_and_Mouse 200 2
 Mouse_Pad 15 23

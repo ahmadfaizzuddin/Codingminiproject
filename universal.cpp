@@ -40,14 +40,14 @@ void buildData()//opens file to get the data to be used
 void saveData()//opens file to save the data that is used or changed
 {
     std::string name;
-    std::string list[6];
+    std::string listG[6];
     double price;
     double stock;
     std::ifstream stringG("Gadgets.txt");
 
         for (size_t i = 0; i < 6; i++)
         {   
-            stringG>>list[i]>>price>>stock;      
+            stringG>>listG[i]>>price>>stock;      
         }
 
     stringG.close();
@@ -56,15 +56,16 @@ void saveData()//opens file to save the data that is used or changed
     outputG.open("Gadgets.txt");
     for (size_t i = 0; i < 6; i++)
     {
-        outputG << list[i] << " " << Gadget[i][0] << " " << Gadget[i][1] <<std::endl;
+        outputG << listG[i] << " " << Gadget[i][0] << " " << Gadget[i][1] <<std::endl;
     }
     outputG.close();
 
+    std::string listA[9];
     std::ifstream stringA("Accessories.txt");
 
         for (size_t i = 0; i < 9; i++)
         {   
-            stringA>>list[i]>>price>>stock;      
+            stringA>>listA[i]>>price>>stock;      
         }
         
     stringA.close();
@@ -73,15 +74,16 @@ void saveData()//opens file to save the data that is used or changed
     outputA.open("Accessories.txt");
     for (size_t i = 0; i < 9; i++)
     {
-        outputA << list[i] << " " << Accesories[i][0] << " " << Accesories[i][1] <<std::endl;
+        outputA << listA[i] << " " << Accesories[i][0] << " " << Accesories[i][1] <<std::endl;
     }
     outputA.close();
 
+    std::string listC[12];
     std::ifstream stringC("Components.txt");
 
         for (size_t i = 0; i < 12; i++)
         {   
-            stringC>>list[i]>>price>>stock;      
+            stringC>>listC[i]>>price>>stock;      
         }
         
     stringC.close();
@@ -90,7 +92,7 @@ void saveData()//opens file to save the data that is used or changed
     outputC.open("Components.txt");
     for (size_t i = 0; i < 12; i++)
     {
-        outputC << list[i] << " " << Component[i][0] << " " << Component[i][1] <<std::endl;
+        outputC << listC[i] << " " << Component[i][0] << " " << Component[i][1] <<std::endl;
     }
     outputC.close();
 }

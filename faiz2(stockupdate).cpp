@@ -93,14 +93,14 @@ void store::stockupdate()                                     //stock level func
         }
     }
 
-     cout<<"The stock of "<< Gadget[row-1][1]<<" will be change into "<<stock_update<<endl;
+     cout<<"The stock of "<< Accesories[row-1][1]<<" will be change into "<<stock_update<<endl;
     cout<<"Confirm?\n";
     cout<<"1.Yes\n";
     cout<<"2.No\n";
     cin>>confirmation;
     if(confirmation == 1)
     {
-        Gadget[row-1][1] = stock_update;
+        Accesories[row-1][1] = stock_update;
         cout<<"Action is succesfull\n";
     }
     else
@@ -141,14 +141,14 @@ void store::stockupdate()                                     //stock level func
         }
     }
 
-    cout<<"The stock of "<< Gadget[row-1][1]<<" will be change into "<<stock_update<<endl;
+    cout<<"The stock of "<< Component[row-1][1]<<" will be change into "<<stock_update<<endl;
     cout<<"Confirm?\n";
     cout<<"1.Yes\n";
     cout<<"2.No\n";
     cin>>confirmation;
     if(confirmation == 1)
     {
-        Gadget[row-1][1] = stock_update;
+        Component[row-1][1] = stock_update;
         cout<<"Action is succesfull\n";
     }
     else
